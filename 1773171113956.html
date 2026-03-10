@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew Lab - Experiencia de café de especialidad</title>
+    <meta name="description" content="Descubre la experiencia de café de especialidad en Brew Lab, un ambiente minimalista japonés con un menú de especialidades únicas">
+    <meta name="keywords" content="café, especialidad, Brew Lab, minimalista, japonés">
+    <style>
+        /* Paleta de colores */
+        :root {
+            --primary: #333333;
+            --secondary: #964B00;
+            --accent: #34C759;
+            --background: #F7F7F7;
+            --text: #333333;
+        }
+
+        /* Tipografías */
+        @font-face {
+            font-family: 'Montserrat';
+            src: url(data:font/truetype;charset=utf-8;base64,/* Base64 de la fuente Montserrat */) format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            src: url(data:font/truetype;charset=utf-8;base64,/* Base64 de la fuente Lato */) format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Estilos generales */
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-gap: 20px;
+        }
+
+        /* Inicio */
+        .inicio {
+            grid-column: 1 / 13;
+            background-image: linear-gradient(to bottom, var(--primary), var(--secondary));
+            padding: 50px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .inicio h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .inicio p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        /* Carta de bebidas */
+        .carta {
+            grid-column: 1 / 13;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .carta h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .carta ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .carta li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .carta li:last-child {
+            border-bottom: none;
+        }
+
+        /* Ubicaciones */
+        .ubicaciones {
+            grid-column: 1 / 13;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .ubicaciones h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .ubicaciones ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .ubicaciones li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .ubicaciones li:last-child {
+            border-bottom: none;
+        }
+
+        /* Acerca de */
+        .acerca-de {
+            grid-column: 1 / 13;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .acerca-de h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .acerca-de p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        /* Contacto */
+        .contacto {
+            grid-column: 1 / 13;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contacto h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .contacto form {
+            margin-top: 20px;
+        }
+
+        .contacto label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .contacto input, .contacto textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+
+        /* Animaciones */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out;
+            animation-fill-mode: both;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .slide-in {
+            transform: translateY(100px);
+            animation: slideIn 1s ease-in-out;
+            animation-fill-mode: both;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(100px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Accesibilidad */
+        button {
+            cursor: pointer;
+        }
+
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+
+        /* Responsive */
+        @media only screen and (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .inicio {
+                padding: 20px;
+            }
+            .carta, .ubicaciones, .acerca-de, .contacto {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" aria-label="Contenido principal">
+        <div class="inicio fade-in" aria-label="Sección de inicio">
+            <h1>Descubre la experiencia de café de especialidad en Brew Lab</h1>
+            <p>Sumérgete en un mundo de sabores y aromas únicos en un ambiente minimalista japonés que te hará sentir en armonía.</p>
+            <button aria-label="Explora nuestro menú">Explora nuestro menú</button>
+        </div>
+        <div class="carta slide-in" aria-label="Menú de especialidades">
+            <h2>Nuestro menú de especialidades</h2>
+            <ul>
+                <li>Café espresso: un clásico intenso y rico</li>
+                <li>Café cappuccino: una perfecta combinación de espresso, leche y espuma</li>
+                <li>Café latte: un delicado equilibrio de espresso y leche</li>
+                <li>Té verde: una refrescante y saludable opción</li>
+                <li>Té negro: un clásico con un toque de elegancia</li>
+            </ul>
+            <button aria-label="Ver todas nuestras especialidades">Ver todas nuestras especialidades</button>
+        </div>
+        <div class="ubicaciones fade-in" aria-label="Ubicaciones">
+            <h2>Encuentranos en nuestras ubicaciones</h2>
+            <ul>
+                <li>Barcelona - Calle de la Paz, 12: en el corazón del Eixample</li>
+                <li>Madrid - Calle de Alcalá, 23: en el centro de la ciudad</li>
+                <li>Valencia - Calle de la Reina, 34: en el barrio de El Carmen</li>
+            </ul>
+            <button aria-label="Ver mapa y horarios">Ver mapa y horarios</button>
+        </div>
+        <div class="acerca-de slide-in" aria-label="Acerca de nosotros">
+            <h2>Nuestra pasión por el café</h2>
+            <p>En Brew Lab, nos apasiona el café y nos esforzamos por ofrecer la mejor experiencia de especialidad en cada taza. Nuestro equipo de expertos selecciona los mejores granos y los prepara con dedicación y amor.</p>
+            <button aria-label="Conoce más sobre nuestra historia">Conoce más sobre nuestra historia</button>
+        </div>
+        <div class="contacto fade-in" aria-label="Formulario de contacto">
+            <h2>Contáctanos</h2>
+            <p>¿Tienes alguna pregunta o comentario? ¿Quieres reservar una mesa o recibir noticias sobre nuestras promociones? ¡No dudes en contactarnos!</p>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required aria-label="Ingrese su nombre">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required aria-label="Ingrese su email">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required aria-label="Ingrese su mensaje"></textarea>
+                <button type="submit" aria-label="Enviar mensaje">Enviar mensaje</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Animaciones
+        const fadeInElements = document.querySelectorAll('.fade-in');
+        const slideInElements = document.querySelectorAll('.slide-in');
+
+        window.addEventListener('scroll', () => {
+            fadeInElements.forEach((element) => {
+                if (element.offsetTop < window.scrollY + window.innerHeight) {
+                    element.classList.add('animate');
+                }
+            });
+
+            slideInElements.forEach((element) => {
+                if (element.offsetTop < window.scrollY + window.innerHeight) {
+                    element.classList.add('animate');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
