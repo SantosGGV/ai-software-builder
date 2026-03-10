@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew Lab - Cafetería Specialty Coffee</title>
+    <meta name="description" content="Brew Lab, la cafetería specialty coffee más innovadora de la ciudad, donde la pasión por el café de alta calidad se une con la estética minimalista japonesa">
+    <meta name="keywords" content="cafetería, specialty coffee, minimalista japonesa, Brew Lab">
+    <style>
+        /* Paleta de colores */
+        :root {
+            --primario: #964B00;
+            --secundario: #F7F7F7;
+            --acento: #8B9467;
+            --fondo: #FFFFFF;
+            --texto: #333333;
+        }
+        
+        /* Tipografías */
+        @font-face {
+            font-family: 'Montserrat';
+            src: url(data:font/truetype;charset=utf-8;base64,AAEAAAARAQAABAAwRVtMRMxEHE5sBq6AAAAPE9TLzI9TLzIAAAFEAAAAB44gT4BMRVWAAAAYAHicxwAAAA) format('truetype');
+        }
+        
+        @font-face {
+            font-family: 'Lato';
+            src: url(data:font/truetype;charset=utf-8;base64,AAEAAAARAQAABAAwRVtMRDcOBq9IAAAAGHcAAAABY3ZwJ4BMRWfAAAAkQAAAACAJicxwAAAA) format('truetype');
+        }
+        
+        /* Estilos básicos */
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--fondo);
+            color: var(--texto);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 10px;
+        }
+        
+        /* Layout */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .col {
+            flex: 1 1 200px;
+        }
+        
+        /* Inicio */
+        .inicio {
+            background-image: linear-gradient(to bottom, var(--primario), var(--secundario));
+            padding: 100px 0;
+            text-align: center;
+            color: var(--fondo);
+        }
+        
+        .inicio h1 {
+            font-size: 36px;
+        }
+        
+        /* Carta de productos */
+        .carta {
+            padding: 50px 0;
+        }
+        
+        .carta h2 {
+            margin-bottom: 20px;
+        }
+        
+        .carta ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .carta li {
+            padding: 10px;
+            border-bottom: 1px solid var(--secundario);
+        }
+        
+        .carta li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Ubicación y contacto */
+        .ubicacion {
+            padding: 50px 0;
+        }
+        
+        .ubicacion h2 {
+            margin-bottom: 20px;
+        }
+        
+        #map {
+            width: 100%;
+            height: 200px;
+            border: 1px solid var(--secundario);
+        }
+        
+        /* Acerca de */
+        .acerca {
+            padding: 50px 0;
+        }
+        
+        .acerca h2 {
+            margin-bottom: 20px;
+        }
+        
+        /* Galería de imágenes */
+        .galeria {
+            padding: 50px 0;
+        }
+        
+        .galeria h2 {
+            margin-bottom: 20px;
+        }
+        
+        .galeria ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .galeria li {
+            float: left;
+            width: calc(33.33% - 10px);
+            margin: 10px;
+        }
+        
+        .galeria img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        /* Reservas y eventos */
+        .reservas {
+            padding: 50px 0;
+        }
+        
+        .reservas h2 {
+            margin-bottom: 20px;
+        }
+        
+        form {
+            padding: 20px;
+            border: 1px solid var(--secundario);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid var(--secundario);
+            border-radius: 10px;
+        }
+        
+        input[type="submit"] {
+            background-color: var(--primario);
+            color: var(--fondo);
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        
+        /* Animaciones */
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Media queries */
+        @media (max-width: 600px) {
+            .galeria li {
+                width: calc(50% - 10px);
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .galeria li {
+                width: 100%;
+            }
+            .inicio h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" aria-label="Contenido principal">
+        <!-- Inicio -->
+        <div class="inicio fade-in" role="banner">
+            <h1>Descubre el Arte del Café en Brew Lab</h1>
+            <p>Sumérgete en la experiencia de la cafetería specialty coffee más innovadora de la ciudad, donde la pasión por el café de alta calidad se une con la estética minimalista japonesa</p>
+        </div>
+        
+        <!-- Carta de productos -->
+        <div class="carta fade-in" role="region" aria-label="Carta de productos">
+            <h2>Nuestra Carta de Especialidades</h2>
+            <ul>
+                <li>Café espresso: el-shot perfecto</li>
+                <li>Café cappuccino: una armonía de sabores</li>
+                <li>Café latte: la combinación clásica</li>
+                <li>Tés y infusiones: opciones para todos los gustos</li>
+            </ul>
+        </div>
+        
+        <!-- Ubicación y contacto -->
+        <div class="ubicacion fade-in" role="region" aria-label="Ubicación y contacto">
+            <h2>Encuentranos</h2>
+            <div id="map" role="application" aria-label="Mapa de ubicación"></div>
+            <p>Dirección: Calle Falsa 123, Ciudad - ¡Ven a visitarnos!</p>
+            <p>Teléfono: 123456789 - ¡Hablemos!</p>
+            <p>Email: <a href="mailto:info@brewlab.com">info@brewlab.com</a> - ¡Escríbenos!</p>
+        </div>
+        
+        <!-- Acerca de -->
+        <div class="acerca fade-in" role="region" aria-label="Acerca de">
+            <h2>Nuestra Historia y Filosofía</h2>
+            <p>En Brew Lab, nos apasiona el café de alta calidad y la estética minimalista japonesa. Queremos compartir esta pasión contigo, creando un espacio acogedor y sofisticado donde disfrutar de la mejor experiencia de café</p>
+            <p>Descubre por qué somos diferentes y cómo nos esforzamos por brindarte la mejor experiencia en cada visita</p>
+        </div>
+        
+        <!-- Galería de imágenes -->
+        <div class="galeria fade-in" role="region" aria-label="Galería de imágenes">
+            <h2>Un vistazo a Nuestro Mundo</h2>
+            <ul>
+                <li><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3Crect%20x%3D%2210%22%20y%3D%2210%22%20width%3D%2280%22%20height%3D%2280%22%20fill%3D%22%238B9467%22%2F%3E%3C%2Fsvg%3E" alt="Imagen 1"></li>
+                <li><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3Crect%20x%3D%2210%22%20y%3D%2210%22%20width%3D%2280%22%20height%3D%2280%22%20fill%3D%22%238B9467%22%2F%3E%3C%2Fsvg%3E" alt="Imagen 2"></li>
+                <li><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3Crect%20x%3D%2210%22%20y%3D%2210%22%20width%3D%2280%22%20height%3D%2280%22%20fill%3D%22%238B9467%22%2F%3E%3C%2Fsvg%3E" alt="Imagen 3"></li>
+            </ul>
+        </div>
+        
+        <!-- Reservas y eventos -->
+        <div class="reservas fade-in" role="region" aria-label="Reservas y eventos">
+            <h2>Reserva tu Espacio o Evento</h2>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono" required>
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Tu mensaje" required></textarea>
+                <input type="submit" value="Enviar Consulta">
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // Mapa
+        const map = L.map('map').setView([40.4168, -3.7038], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+            subdomains: ['a', 'b', 'c']
+        }).addTo(map);
+        
+        // Animaciones
+        window.addEventListener('load', () => {
+            const fadeIns = document.querySelectorAll('.fade-in');
+            fadeIns.forEach((fadeIN) => {
+                fadeIN.style.opacity = 1;
+            });
+        });
+    </script>
+</body>
+</html>
