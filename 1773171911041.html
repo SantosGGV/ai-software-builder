@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafés de Especialidad - Tu destino para disfrutar del mejor café</title>
+    <meta name="description" content="Descubre el mundo del café con nosotros. Información sobre los mejores cafés de especialidad, cafeteras y equipos, recetas y consejos, y noticias y tendencias sobre la industria del café.">
+    <meta name="keywords" content="cafés de especialidad, cafeteras, recetas, noticias, tendencias">
+    <style>
+        /* Paleta de colores */
+        :root {
+            --primario: #964B00;
+            --secundario: #F7F7F7;
+            --acento: #34C759;
+            --fondo: #F2F2F2;
+            --texto: #333333;
+        }
+
+        /* Tipografías */
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            src: url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+        }
+
+        /* Estilos básicos */
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--fondo);
+            color: var(--texto);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--primario);
+            color: var(--secundario);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        /* Navegación */
+        .nav {
+            background-color: var(--secundario);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .nav a {
+            color: var(--texto);
+            text-decoration: none;
+        }
+
+        /* Inicio */
+        .inicio {
+            background-image: linear-gradient(to bottom, var(--primario), var(--fondo));
+            padding: 50px;
+            text-align: center;
+        }
+
+        .inicio h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        /* Nuestros Cafés */
+        .nuestros-cafes {
+            padding: 20px;
+        }
+
+        .nuestros-cafes h2 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .nuestros-cafes ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nuestros-cafes li {
+            margin-bottom: 20px;
+        }
+
+        /* Cafeteras y Equipos */
+        .cafeteras-y-equipos {
+            padding: 20px;
+        }
+
+        .cafeteras-y-equipos h2 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .cafeteras-y-equipos ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cafeteras-y-equipos li {
+            margin-bottom: 20px;
+        }
+
+        /* Recetas y Consejos */
+        .recetas-y-consejos {
+            padding: 20px;
+        }
+
+        .recetas-y-consejos h2 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .recetas-y-consejos ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .recetas-y-consejos li {
+            margin-bottom: 20px;
+        }
+
+        /* Blog de Noticias y Tendencias */
+        .blog-de-noticias-y-tendencias {
+            padding: 20px;
+        }
+
+        .blog-de-noticias-y-tendencias h2 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .blog-de-noticias-y-tendencias ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .blog-de-noticias-y-tendencias li {
+            margin-bottom: 20px;
+        }
+
+        /* Contacto y Tienda */
+        .contacto-y-tienda {
+            padding: 20px;
+        }
+
+        .contacto-y-tienda h2 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .contacto-y-tienda ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contacto-y-tienda li {
+            margin-bottom: 20px;
+        }
+
+        /* Animaciones */
+        .animacion {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .animacion:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 10px;
+            }
+
+            .nav {
+                padding: 5px;
+            }
+
+            .inicio {
+                padding: 20px;
+            }
+
+            .nuestros-cafes, .cafeteras-y-equipos, .recetas-y-consejos, .blog-de-noticias-y-tendencias, .contacto-y-tienda {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header" role="banner">
+        <h1>Cafés de Especialidad - Tu destino para disfrutar del mejor café</h1>
+    </header>
+    <nav class="nav" role="navigation">
+        <ul>
+            <li><a href="#inicio">Explora Nuestro Mundo</a></li>
+            <li><a href="#nuestros-cafes">Nuestros Cafés Exclusivos</a></li>
+            <li><a href="#cafeteras-y-equipos">Cafeteras y Equipos de Alta Calidad</a></li>
+            <li><a href="#recetas-y-consejos">Recetas y Consejos para un Café Perfecto</a></li>
+            <li><a href="#blog-de-noticias-y-tendencias">Noticias y Tendencias del Café</a></li>
+            <li><a href="#contacto-y-tienda">Contacto y Tienda en Línea</a></li>
+        </ul>
+    </nav>
+    <main class="container" role="main">
+        <section id="inicio" class="inicio" aria-label="Inicio">
+            <h1>Descubre el mundo del café con nosotros</h1>
+            <p>En nuestro sitio web, podrás encontrar información sobre los mejores cafés de especialidad, cafeteras y equipos, recetas y consejos, y noticias y tendencias sobre la industria del café. ¡Únete a nuestra comunidad y descubre el placer de disfrutar de un café perfecto!</p>
+            <p><a href="#nuestros-cafes" class="animacion">Explora nuestros cafés exclusivos</a></p>
+        </section>
+        <section id="nuestros-cafes" class="nuestros-cafes" aria-label="Nuestros Cafés">
+            <h2>Nuestros Cafés Exclusivos</h2>
+            <ul>
+                <li> Café de Colombia: un clásico entre los amantes del café</li>
+                <li> Café de Brasil: un sabor único y exquisito</li>
+                <li> Café de Etiopía: un café con un toque de exotismo</li>
+            </ul>
+            <p><a href="#cafeteras-y-equipos" class="animacion">Descubre nuestras cafeteras y equipos</a></p>
+        </section>
+        <section id="cafeteras-y-equipos" class="cafeteras-y-equipos" aria-label="Cafeteras y Equipos">
+            <h2>Cafeteras y Equipos de Alta Calidad</h2>
+            <ul>
+                <li> Cafetera de goteo: la forma perfecta de preparar un café</li>
+                <li> Cafetera de espresso: para los amantes del café forte</li>
+                <li> Molinillo de café: para aquellos que buscan un sabor auténtico</li>
+            </ul>
+            <p><a href="#recetas-y-consejos" class="animacion">Aprende a preparar un café perfecto</a></p>
+        </section>
+        <section id="recetas-y-consejos" class="recetas-y-consejos" aria-label="Recetas y Consejos">
+            <h2>Recetas y Consejos para un Café Perfecto</h2>
+            <ul>
+                <li> Cómo preparar un café perfecto: consejos y trucos</li>
+                <li> Receta de café con leche: un clásico renovado</li>
+                <li> Consejos para elegir el mejor café: ¡no te pierdas!</li>
+            </ul>
+            <p><a href="#blog-de-noticias-y-tendencias" class="animacion">Mantente al tanto de las últimas noticias y tendencias</a></p>
+        </section>
+        <section id="blog-de-noticias-y-tendencias" class="blog-de-noticias-y-tendencias" aria-label="Noticias y Tendencias">
+            <h2>Noticias y Tendencias del Café</h2>
+            <ul>
+                <li> Noticias sobre la industria del café: ¡entérate de lo último!</li>
+                <li> Tendencias en la creación de cafés: ¡descubre lo nuevo!</li>
+                <li> Entrevistas con expertos en café: ¡conoce sus secretos!</li>
+            </ul>
+            <p><a href="#contacto-y-tienda" class="animacion">Visita nuestra tienda en línea</a></p>
+        </section>
+        <section id="contacto-y-tienda" class="contacto-y-tienda" aria-label="Contacto y Tienda">
+            <h2>Contacto y Tienda en Línea</h2>
+            <ul>
+                <li> Formulario de contacto: ¡háblanos!</li>
+                <li> Tienda en línea de café y cafeteras: ¡compra ahora!</li>
+                <li> Información sobre envíos y pagos: ¡todo lo que necesitas saber!</li>
+            </ul>
+        </section>
+    </main>
+    <script>
+        // Animaciones
+        const elementos = document.querySelectorAll('.animacion');
+        elementos.forEach((elemento) => {
+            elemento.addEventListener('mouseover', () => {
+                elemento.classList.add('animacion');
+            });
+            elemento.addEventListener('mouseout', () => {
+                elemento.classList.remove('animacion');
+            });
+        });
+    </script>
+</body>
+</html>
